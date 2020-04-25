@@ -35,8 +35,10 @@ Route::get('/', function () {
 
     //return view('welcome');
 
-    $cat = Category::find(2)->products;
-    return $cat;
+    /*$cat = Category::find(2)->products;
+    return $cat;*/
+
+    return view('tienda.index');
 });
 
 Auth::routes();
