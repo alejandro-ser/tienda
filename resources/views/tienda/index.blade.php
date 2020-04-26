@@ -2,6 +2,13 @@
 
 @section('titulo', 'Tienda Alejo')
 
+@section('estilos')
+
+<link rel="stylesheet" type="text/css" href="{{ asset('asset/styles/main_styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('asset/styles/responsive.css') }}">
+
+@endsection
+
 @section('contenido')
 
 <div class="super_overlay"></div>
