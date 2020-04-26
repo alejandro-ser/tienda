@@ -27,19 +27,27 @@ const apiCategory = new Vue({
     },
     methods: {
         getCategory() {
-            let url  = '/api/category/' + this.slug;
-            axios.get(url).then(response => {
-                this.div_mensajeslug = 'Slug '+response.data;
-                this.div_mensaje_category = 'Categoría '+response.data;
-                if(this.div_mensajeslug === "Slug disponible") {
-                    this.div_clase_slug = 'badge badge-success';
-                    this.deshabilitar_boton = 0;
-                } else {
-                    this.div_clase_slug = 'badge badge-danger';
-                    this.deshabilitar_boton = 1;
-                }
+            if(this.slug){
+                let url  = '/api/category/' + this.slug;
+                axios.get(url).then(response => {
+                    this.div_mensajeslug = 'Slug '+response.data;
+                    this.div_mensaje_category = 'Categoría '+response.data;
+                    if(this.div_mensajeslug === "Slug disponible") {
+                        this.div_clase_slug = 'badge badge-success';
+                        this.deshabilitar_boton = 0;
+                    } else {
+                        this.div_clase_slug = 'badge badge-danger';
+                        this.deshabilitar_boton = 1;
+                    }
+                    this.div_aparecer = true;
+                })
+            } else {
+                this.div_mensajeslug = 'Escribe una categoría';
+                this.div_mensaje_category = 'Escribe una categoría';
+                this.div_clase_slug = 'badge badge-danger';
+                this.deshabilitar_boton = 1;
                 this.div_aparecer = true;
-            })
+            }
         }
     }
 });

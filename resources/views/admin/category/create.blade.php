@@ -6,7 +6,8 @@
 <div id="apiCategory">
     <!-- Default box -->
     <div class="card">
-        <form action="">
+        <form action="{{ route('admin.category.store') }}" method="POST">
+            @csrf
             <div class="card-header">
                 <h3 class="card-title">Administración de categorias</h3>
 

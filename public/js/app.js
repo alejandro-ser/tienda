@@ -49812,21 +49812,29 @@ var apiCategory = new Vue({
     getCategory: function getCategory() {
       var _this = this;
 
-      var url = '/api/category/' + this.slug;
-      axios.get(url).then(function (response) {
-        _this.div_mensajeslug = 'Slug ' + response.data;
-        _this.div_mensaje_category = 'Categoría ' + response.data;
+      if (this.slug) {
+        var url = '/api/category/' + this.slug;
+        axios.get(url).then(function (response) {
+          _this.div_mensajeslug = 'Slug ' + response.data;
+          _this.div_mensaje_category = 'Categoría ' + response.data;
 
-        if (_this.div_mensajeslug === "Slug disponible") {
-          _this.div_clase_slug = 'badge badge-success';
-          _this.deshabilitar_boton = 0;
-        } else {
-          _this.div_clase_slug = 'badge badge-danger';
-          _this.deshabilitar_boton = 1;
-        }
+          if (_this.div_mensajeslug === "Slug disponible") {
+            _this.div_clase_slug = 'badge badge-success';
+            _this.deshabilitar_boton = 0;
+          } else {
+            _this.div_clase_slug = 'badge badge-danger';
+            _this.deshabilitar_boton = 1;
+          }
 
-        _this.div_aparecer = true;
-      });
+          _this.div_aparecer = true;
+        });
+      } else {
+        this.div_mensajeslug = 'Escribe una categoría';
+        this.div_mensaje_category = 'Escribe una categoría';
+        this.div_clase_slug = 'badge badge-danger';
+        this.deshabilitar_boton = 1;
+        this.div_aparecer = true;
+      }
     }
   }
 });
