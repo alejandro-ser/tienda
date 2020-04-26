@@ -53,4 +53,4 @@ Route::get('/admin', function () {
     return view('plantilla.admin');
 });
 
-Route::resource('admin/category', 'admin\AdminController')->names('admin.category');
+Route::resource('admin/category', 'admin\AdminCategoryController')->names('admin.category');

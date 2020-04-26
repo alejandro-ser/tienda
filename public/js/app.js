@@ -49781,7 +49781,7 @@ var apiCategory = new Vue({
     div_mensaje_category: '',
     div_clase_slug: 'badge badge-danger',
     div_aparecer: false,
-    deshabilitar_boton: 0
+    deshabilitar_boton: 1
   },
   computed: {
     generarSlug: function generarSlug() {
@@ -49835,6 +49835,12 @@ var apiCategory = new Vue({
         this.deshabilitar_boton = 1;
         this.div_aparecer = true;
       }
+    }
+  },
+  mounted: function mounted() {
+    if (document.getElementById('nombre').dataset.value) {
+      this.nombre = document.getElementById('nombre').dataset.value;
+      this.deshabilitar_boton = 0;
     }
   }
 });
