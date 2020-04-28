@@ -5,15 +5,15 @@
 @section('contenido')
 
 <!-- /.row -->
-<div class="row">
+<div id="confirmarEliminar" class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Sección categorías</h3>
+          <a href="{{ route('admin.category.create') }}" class="btn btn-success btn-sm">Crear categoría</a>
+          {{-- <h3 class="card-title">Sección categorías</h3> --}}
 
           <div class="card-tools">
             <div class="input-group input-group-sm" style="width: 200px;">
-                <a href="{{ route('admin.category.create') }}" class="btn btn-primary btn-sm mr-2">Crear</a>
                 <input type="text" name="table_search" class="form-control float-right" placeholder="Buscar">
 
                 <div class="input-group-append">
@@ -46,9 +46,19 @@
                         <td>{{$categoria->created_at}}</td>
                         <td>{{$categoria->updated_at}}</td>
 
-                        <td><a href="{{ route('admin.category.show', $categoria->slug) }}" class="btn btn-default">Ver</a></td>
-                        <td><a href="{{ route('admin.category.edit', $categoria->slug) }}" class="btn btn-info">Editar</a></td>
-                        <td><a href="{{ route('admin.category.index', $categoria->slug) }}" class="btn btn-danger">Eliminar</a></td>
+                        <td><a href="{{ route('admin.category.show', $categoria->slug) }}"
+                                class="btn btn-default btn-sm">
+                              <i class="far fa-eye"></i>
+                            </a></td>
+                        <td><a href="{{ route('admin.category.edit', $categoria->slug) }}"
+                                class="btn btn-info btn-sm">
+                                <i class="far fa-edit"></i>
+                            </a></td>
+                        <td><a href="{{ route('admin.category.index', $categoria->slug) }}"
+                                v-on:click.prevent="deseasEliminar({{$categoria->id}})"
+                                class="btn btn-danger btn-sm">
+                                <i class="far fa-trash-alt"></i>
+                            </a></td>
                     </tr>
                 @endforeach
             </tbody>
@@ -61,6 +71,11 @@
       </div>
       <!-- /.card -->
     </div>
+
+    <span style="display:none;" id="urlBase">{{ route('admin.category.index') }}</span>
+
+    @include('custom.modal_eliminar')
+
 </div>
 <!-- /.row -->
 

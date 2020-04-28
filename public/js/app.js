@@ -49879,11 +49879,19 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var app = new Vue({
-  el: '#app'
-});
+if (document.getElementById('app')) {
+  var app = new Vue({
+    el: '#app'
+  });
+}
 
-__webpack_require__(/*! ./apiCategory */ "./resources/js/apiCategory.js");
+if (document.getElementById('apiCategory')) {
+  __webpack_require__(/*! ./apiCategory */ "./resources/js/apiCategory.js");
+}
+
+if (document.getElementById('confirmarEliminar')) {
+  __webpack_require__(/*! ./confirmarEliminar */ "./resources/js/confirmarEliminar.js");
+}
 
 /***/ }),
 
@@ -49997,6 +50005,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/confirmarEliminar.js":
+/*!*******************************************!*\
+  !*** ./resources/js/confirmarEliminar.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var confirmarEliminar = new Vue({
+  el: '#confirmarEliminar',
+  data: {
+    url_a_eliminar: ''
+  },
+  methods: {
+    deseasEliminar: function deseasEliminar(id) {
+      this.url_a_eliminar = document.getElementById('urlBase').innerHTML + '/' + id;
+      $('#mdalEliminar').modal('show');
+    }
+  }
+});
 
 /***/ }),
 

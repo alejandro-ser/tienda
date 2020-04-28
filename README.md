@@ -2,7 +2,7 @@
 
 ## Tienda Online hecha con Laravel 7
 
-Repositorio de respaldo para el tutorial [Crear una tienda online](https://www.youtube.com/playlist?list=PLtg6DxcGyHSu1udtxA3rHtDx4dkSwgIlv) del canal de youtube de [JHONATAN FERNANDEZ](https://www.youtube.com/channel/UCFg6Q1_RkC1IoxzY-OHDb_Q)
+Repositorio de respaldo para el tutorial **[Crear una tienda online](https://www.youtube.com/playlist?list=PLtg6DxcGyHSu1udtxA3rHtDx4dkSwgIlv)** del canal de youtube de __[JHONATAN FERNANDEZ](https://www.youtube.com/channel/UCFg6Q1_RkC1IoxzY-OHDb_Q)__
 
 ### Instalar y configurar el proyecto
 

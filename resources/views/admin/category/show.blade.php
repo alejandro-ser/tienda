@@ -3,12 +3,10 @@
 @section('titulo', 'Editar categoría')
 
 @section('contenido')
-<div id="apiCategory">
+<div>
     <!-- Default box -->
     <div class="card">
         <form>
-            @csrf
-
             <div class="card-header">
                 <h3 class="card-title">Ver de categoría</h3>
 
@@ -22,13 +20,10 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input v-model="nombre"
-                            @blur="getCategory"
-                            @focus="div_aparecer = false"
-                            data-value="{{ $cat->nombre }}"
+                    <input value="{{ $cat->nombre }}"
                             class="form-control" type="text" name="nombre" id="nombre"
                             placeholder="Ingrese la categoría"
-                            >
+                            readonly>
 
                     <label for="slug">Slug</label>
                     <input v-model="generarSlug"
@@ -37,7 +32,11 @@
                             readonly>
 
                     <label for="descripcion">Descripción</label>
-                    <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" readonly>
+                    <textarea class="form-control"
+                                name="descripcion"
+                                id="descripcion"
+                                cols="30" rows="10"
+                                readonly>
                         {{ $cat->descripcion }}
                     </textarea>
                 </div>
@@ -45,7 +44,7 @@
             <!-- /.card-body -->
             <div class="card-footer">
                 <a href="{{ route('cancelar','admin.category.index') }}" class="btn btn-danger">Cancelar</a>
-                <a href="{{ route('admin.category.edit',$cat->slug) }}" class="btn btn-outline-success float-right">Editar</a>
+                <a href="{{ route('admin.category.edit',$cat->slug) }}" class="btn btn-info float-right">Editar</a>
             </div>
             <!-- /.card-footer-->
         </form>
