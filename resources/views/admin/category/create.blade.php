@@ -42,6 +42,7 @@
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
+                <a href="{{ route('cancelar','admin.category.index') }}" class="btn btn-danger">Cancelar</a>
                 <input :disabled="deshabilitar_boton == 1"
                         type="submit" value="Guardar" class="btn btn-primary float-right">
             </div>

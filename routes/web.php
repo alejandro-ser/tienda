@@ -54,3 +54,7 @@ Route::get('/admin', function () {
 });
 
 Route::resource('admin/category', 'admin\AdminCategoryController')->names('admin.category');
+
+Route::get('cancelar/{ruta}', function ($ruta) {
+    return redirect()->route($ruta)->with('cancelar','Acción cancelada!');
+})->name('cancelar');
