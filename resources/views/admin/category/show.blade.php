@@ -1,6 +1,11 @@
 @extends('plantilla.admin')
 
-@section('titulo', 'Editar categoría')
+@section('titulo', 'Ver categoría')
+
+@section('breadcrumb')
+    <li class="breadcrumb-item"><a href="{{route('admin.category.index')}}">Categorías</a></li>
+    <li class="breadcrumb-item active">@yield('titulo')</li>
+@endsection
 
 @section('contenido')
 <div>
