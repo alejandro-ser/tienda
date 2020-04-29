@@ -24,7 +24,7 @@ class AdminProductController extends Controller
 
         $productos = Product::where('nombre','like',"%$nombre%")->orderBy('nombre')->paginate(4);
 
-        return view('admin.product.index', compact('productos'));
+        return view('admin.product.index',compact('productos'));
     }
 
     /**
@@ -34,7 +34,9 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        //
+        $categorias = Category::orderBy('nombre')->get();
+
+        return view('admin.product.create',compact('categorias'));
     }
 
     /**

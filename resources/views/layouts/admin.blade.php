@@ -195,7 +195,7 @@
           <!-- Productos -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-list-alt"></i>
+              <i class="nav-icon fas fa-cart-arrow-down"></i>
               <p>
                 Productos
                 <i class="right fas fa-angle-left"></i>
@@ -217,11 +217,11 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-img"></i>
+            <a href="{{ asset('adminlte/index.html')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
               <p>
-                Imagenes
-                {{-- <span class="right badge badge-danger">New</span> --}}
+                AdminLTE
+                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
@@ -255,25 +255,25 @@
     <section class="content">
 
       @if( session('datos') )
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="alert text-success border-success font-weight-bolder alert-dismissible fade show" role="alert">
           {{ session('datos') }}
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <button type="button" class="close text-success" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
       @endif
 
       @if( session('cancelar') )
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <div class="alert border-danger text-danger font-weight-bolder alert-dismissible fade show" role="alert">
           {{ session('cancelar') }}
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <button type="button" class="close text-danger" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
       @endif
 
       @if ($errors->any())
-          <div class="alert alert-danger">
+          <div class="alert text-danger border-danger font-weight-bolder">
             <ul>
               @foreach ($errors->all() as $error)
                 <li> {{ $error }} </li>
