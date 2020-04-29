@@ -192,11 +192,35 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!-- Productos -->
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Productos
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('admin.product.index') }}" class="nav-link">
+                  <i class="fas fa-circle nav-icon"></i>
+                  <p>Listado de productos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.product.create') }}" class="nav-link">
+                  <i class="fas fa-circle nav-icon"></i>
+                  <p>Crear producto</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-img"></i>
+              <p>
+                Imagenes
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>

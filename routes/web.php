@@ -28,7 +28,7 @@ Route::get('/', function () {
     $prod->estado = 'Nuevo';
     $prod->activo = 'Si';
     $prod->sliderprincipal = 'No';
-    $prod->category_id = 2;
+    $prod->category_id = 1;
     $prod->save();
     return $prod;
     */
@@ -50,6 +50,8 @@ Route::get('/admin', function () {
 })->name('admin')->middleware('auth');
 
 Route::resource('admin/category', 'admin\AdminCategoryController')->names('admin.category');
+
+Route::resource('admin/product', 'admin\AdminProductController')->names('admin.product');
 
 Route::get('cancelar/{ruta}', function ($ruta) {
     return redirect()->route($ruta)->with('cancelar','Acción cancelada!');
