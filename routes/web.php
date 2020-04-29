@@ -46,7 +46,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin', function () {
-    return view('plantilla.admin');
+    return view('layouts.admin');
 })->name('admin')->middleware('auth');
 
 Route::resource('admin/category', 'admin\AdminCategoryController')->names('admin.category');

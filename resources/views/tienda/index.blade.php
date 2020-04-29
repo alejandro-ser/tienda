@@ -1,4 +1,4 @@
-@extends('plantilla.plantilla')
+@extends('layouts.plantilla')
 
 @section('titulo', 'Tienda Alejo')
 
@@ -231,15 +231,6 @@
 			</div>
 		</div>
 
-
-
-
-
-
-
-
-
-
 		<!-- Products -->
 
 		<div class="products">
@@ -443,7 +434,6 @@
 
 	<!-- Lo mas visto -->
 
-
 <div class="lomasvendidocontenedor">
 	<div class="section_title text-center">Lo mas Visto</div>	
 	<br> 	 
@@ -519,19 +509,10 @@
 </div>
 
 <br>
-
 <br>
-
 <br>
-
-
-
-
-
-
 
  	<!-- Lo mas visto -->
-
 
 	<div class="lomasvendidocontenedor">
 			<div class="section_title text-center">Lo mas vendido</div>	
