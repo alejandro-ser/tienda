@@ -47,7 +47,35 @@ class AdminProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = New Product();
+        $product->nombre = $request->nombre;
+        $product->slug = $request->slug;
+        $product->cantidad = $request->cantidad;
+        $product->precio_actual = $request->precioactual;
+        $product->precio_anterior = $request->precioanterior;
+        $product->porcentaje_descuento = $request->porcentajededescuento;
+        $product->descripcion_corta = $request->descripcion_corta;
+        $product->descripcion_larga = $request->descripcion_larga;
+        $product->especificaciones = $request->especificaciones;
+        $product->datos_de_interes = $request->datos_de_interes;
+        $product->estado = $request->estado;
+        $product->category_id = $request->category_id;
+
+        if ($product->activo) {
+            $product->activo = 'Si';
+        } else {
+            $product->activo = 'No';
+        }
+
+        if ($product->sliderprincipal) {
+            $product->sliderprincipal = 'Si';
+        } else {
+            $product->sliderprincipal = 'No';
+        }
+
+        $product->save();
+
+        return $product;
     }
 
     /**
