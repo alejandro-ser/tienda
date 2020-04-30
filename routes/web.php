@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    /*$prod = new Product();
+    /*$prod = Product::findOrFail(2);
     $prod->nombre = 'Producto 3';
-    $prod->slug = 'producto_3';
+    $prod->slug = 'producto-3';
     $prod->descripcion_corta = 'Producto 3';
     $prod->descripcion_larga = 'Producto 3';
     $prod->especificaciones = 'Producto 3';
@@ -30,8 +30,7 @@ Route::get('/', function () {
     $prod->sliderprincipal = 'No';
     $prod->category_id = 1;
     $prod->save();
-    return $prod;
-    */
+    return $prod;*/
 
     //return view('welcome');
 

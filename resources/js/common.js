@@ -29,6 +29,10 @@ if(document.getElementById('apiCategory')) {
     require('./admin/apiCategory');
 }
 
+if(document.getElementById('apiProduct')) {
+    require('./admin/apiProduct');
+}
+
 if(document.getElementById('confirmarEliminar')) {
     require('./confirmarEliminar');
 }
