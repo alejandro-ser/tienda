@@ -13,7 +13,9 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <a href="{{ route('admin.product.create') }}" class="btn btn-success btn-sm">Crear producto</a>
+          <a href="{{ route('admin.product.create') }}" class="btn btn-success btn-sm font-weight-bolder">
+            Crear producto
+          </a>
 
           <div class="card-tools">
             <form>

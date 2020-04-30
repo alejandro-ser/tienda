@@ -169,8 +169,8 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Categorías -->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview {{ Request::is('admin/category*') ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link {{ Request::is('admin/category*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Categorias
@@ -179,22 +179,22 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('admin.category.index') }}" class="nav-link">
+                <a href="{{ route('admin.category.index') }}" class="nav-link {{ Request::is('admin/category') ? 'active' : '' }}">
                   <i class="fas fa-circle nav-icon"></i>
                   <p>Listado de categorías</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('admin.category.create') }}" class="nav-link">
-                  <i class="fas fa-circle nav-icon"></i>
+                <a href="{{ route('admin.category.create') }}" class="nav-link {{ Request::is('admin/category/create') ? 'active' : '' }}">
+                  <i class="fas fa-plus nav-icon"></i>
                   <p>Crear categoría</p>
                 </a>
               </li>
             </ul>
           </li>
           <!-- Productos -->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview {{ Request::is('admin/product*') ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link {{ Request::is('admin/product*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-cart-arrow-down"></i>
               <p>
                 Productos
@@ -203,14 +203,14 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('admin.product.index') }}" class="nav-link">
+                <a href="{{ route('admin.product.index') }}" class="nav-link {{ Request::is('admin/product') ? 'active' : '' }}">
                   <i class="fas fa-circle nav-icon"></i>
                   <p>Listado de productos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('admin.product.create') }}" class="nav-link">
-                  <i class="fas fa-circle nav-icon"></i>
+                <a href="{{ route('admin.product.create') }}" class="nav-link {{ Request::is('admin/product/create') ? 'active' : '' }}">
+                  <i class="fas fa-plus nav-icon"></i>
                   <p>Crear producto</p>
                 </a>
               </li>
@@ -255,25 +255,25 @@
     <section class="content">
 
       @if( session('datos') )
-        <div class="alert text-success border-success font-weight-bolder alert-dismissible fade show" role="alert">
+        <div class="alert alert-success font-weight-bolder alert-dismissible fade show" role="alert">
           {{ session('datos') }}
-          <button type="button" class="close text-success" data-dismiss="alert" aria-label="Close">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
       @endif
 
       @if( session('cancelar') )
-        <div class="alert border-danger text-danger font-weight-bolder alert-dismissible fade show" role="alert">
+        <div class="alert alert-danger font-weight-bolder alert-dismissible fade show" role="alert">
           {{ session('cancelar') }}
-          <button type="button" class="close text-danger" data-dismiss="alert" aria-label="Close">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
       @endif
 
       @if ($errors->any())
-          <div class="alert text-danger border-danger font-weight-bolder">
+          <div class="alert alert-danger font-weight-bolder">
             <ul>
               @foreach ($errors->all() as $error)
                 <li> {{ $error }} </li>

@@ -49,9 +49,9 @@ Route::get('/admin', function () {
     return view('layouts.admin');
 })->name('admin')->middleware('auth');
 
-Route::resource('admin/category', 'admin\AdminCategoryController')->names('admin.category');
+Route::resource('admin/category', 'Admin\AdminCategoryController')->names('admin.category');
 
-Route::resource('admin/product', 'admin\AdminProductController')->names('admin.product');
+Route::resource('admin/product', 'Admin\AdminProductController')->names('admin.product');
 
 Route::get('cancelar/{ruta}', function ($ruta) {
     return redirect()->route($ruta)->with('cancelar','Acción cancelada!');

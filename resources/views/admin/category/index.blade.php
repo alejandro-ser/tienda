@@ -13,7 +13,9 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <a href="{{ route('admin.category.create') }}" class="btn btn-success btn-sm">Crear categoría</a>
+          <a href="{{ route('admin.category.create') }}" class="btn btn-success btn-sm font-weight-bolder">
+            Crear categoría
+          </a>
           {{-- <h3 class="card-title">Sección categorías</h3> --}}
 
           <div class="card-tools">
