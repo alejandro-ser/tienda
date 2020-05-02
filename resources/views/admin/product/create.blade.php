@@ -232,13 +232,22 @@
 
                 <div class="card card-warning">
                     <div class="card-header">
-                        <h3 class="card-title">Imagenes</h3>
+                        <h3 class="card-title">Imágenes</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="archivosimagenes">Subir varias imagenes</label>
-                            <input type="file" class="form-control-file" id="archivosimagenes[]" multiple accept="image/*">
+                            <label for="imagenes">Añadir imágenes</label>
+                            <input type="file" class="form-control-file"
+                                    name="imagenes[]" id="imagenes[]" multiple accept="image/*">
+
+                            <div class="description">
+                                <small>Un número ilimitado de imagenes pueden ser cargados en este campo</small>
+                                <br>
+                                <small>Límite de 2048Kb por imagen</small>
+                                <br>
+                                <small>Tipos permitidos: jpg, jpeg, png, gif, svg</small>
+                            </div>
                         </div>
                     </div>
                     <!-- /.card-body -->

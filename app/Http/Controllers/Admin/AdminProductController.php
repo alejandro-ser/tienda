@@ -47,6 +47,12 @@ class AdminProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required|max:50|min:3|unique:products,nombre',
+            'slug' => 'required|max:50|min:3|unique:products,slug',
+            'imagenes.*' => 'image|mimes:jpg,jpeg,png,gif,svg|max:2048'
+        ]);
+
         $product = New Product();
         $product->nombre = $request->nombre;
         $product->slug = $request->slug;
@@ -73,9 +79,24 @@ class AdminProductController extends Controller
             $product->sliderprincipal = 'No';
         }
 
-        $product->save();
+        if ($product->save()) {
+            $urlImagenes = [];
 
-        return $product;
+            if ($request->hasFile('imagenes')) {
+                $imagenes = $request->file('imagenes');
+
+                foreach ($imagenes as $imagen) {
+                    $nombre = time().'_'.$imagen->getClientOriginalName();
+                    $ruta = public_path().'/img';
+                    $imagen->move($ruta,$nombre);
+                    $urlImagenes[]['url'] = '/img/'.$nombre;
+                }
+            }
+
+            $product->images()->createMany($urlImagenes);
+        }
+
+        return redirect()->route('admin.product.index')->with('datos', 'Producto creado correctamente');
     }
 
     /**

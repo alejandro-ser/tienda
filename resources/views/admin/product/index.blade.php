@@ -52,8 +52,8 @@
                         <td>{{$producto->nombre}}</td>
                         <td>{{$producto->slug}}</td>
                         <td>{{$producto->descripcion}}</td>
-                        <td>{{$producto->created_at}}</td>
-                        <td>{{$producto->updated_at}}</td>
+                        <td>{{$producto->created_at->format('d-m-Y')}}</td>
+                        <td>{{$producto->updated_at->format('d-m-Y')}}</td>
 
                         <td><a href="{{ route('admin.product.show', $producto->slug) }}"
                                 class="btn btn-default btn-sm">

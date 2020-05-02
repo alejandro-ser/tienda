@@ -53,8 +53,8 @@
                         <td>{{$categoria->nombre}}</td>
                         <td>{{$categoria->slug}}</td>
                         <td>{{$categoria->descripcion}}</td>
-                        <td>{{$categoria->created_at}}</td>
-                        <td>{{$categoria->updated_at}}</td>
+                        <td>{{$categoria->created_at->format('d-m-Y')}}</td>
+                        <td>{{$categoria->updated_at->format('d-m-Y')}}</td>
 
                         <td><a href="{{ route('admin.category.show', $categoria->slug) }}"
                                 class="btn btn-default btn-sm">

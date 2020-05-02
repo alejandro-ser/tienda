@@ -2,6 +2,8 @@
 
 use App\Product;
 use App\Category;
+use App\Image;
+use App\User;
 
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +17,25 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Para las pruebas con las imagenes
+Route::get('/prueba', function () {
+
+    // 20 Eliminar todas las imagenes
+    $producto = Product::find(7);
+
+    $producto->images;
+
+    return $producto;
+});
+
+// Mostrar resultados
+Route::get('/resultados', function () {
+
+    $image = Image::orderBy('id','Desc')->get();
+
+    return $image;
+});
 
 Route::get('/', function () {
 

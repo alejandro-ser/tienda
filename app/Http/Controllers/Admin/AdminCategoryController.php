@@ -57,7 +57,7 @@ class AdminCategoryController extends Controller
 
         Category::create($request->all());
 
-        return redirect()->route('admin.category.index')->with('datos', 'Registro creado correctamente');
+        return redirect()->route('admin.category.index')->with('datos', 'Categpría creada correctamente');
     }
 
     /**
